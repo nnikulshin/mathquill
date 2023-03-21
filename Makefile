@@ -15,12 +15,8 @@ ifneq ($(shell node -e 'console.log("I am Node.js")'), I am Node.js)
   $(error Please install Node.js: https://nodejs.org/ )
 endif
 
-# stupid GNU vs BSD https://github.com/mathquill/mathquill/pull/653/commits/4332b0e97a92fb1362123a06b68fa49d9efb6f38#r68305423
-ifeq (x, $(shell echo xy | sed -r 's/(x)y/\1/' 2>/dev/null))
-  SED_IN_PLACE = sed -i    # GNU
-else
-  SED_IN_PLACE = sed -i '' # BSD
-endif
+
+SED_IN_PLACE = sed -i ''
 
 
 #
